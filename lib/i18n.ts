@@ -1,32 +1,41 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-http-backend';
 
 i18n
-  .use(LanguageDetector) // Detect user language (browser default initially)
-  .use(initReactI18next) // Pass i18n to react-i18next
+  .use(Backend)
+  .use(initReactI18next) // Pass i18n instance to react-i18next
   .init({
-    fallbackLng: 'en', // Fallback language if user language is not available or key is missing
+    // the translations
+    // you can learn more about on i18next documentation
+    // We will load translations from the public folder using the backend config instead of 'resources'
+    resources: {},
+
+    // Explicitly list supported languages
+    supportedLngs: ['en', 'de'],
+    // Set the initial language
+    lng: 'en',
+    // Fallback language if the current language translations are not available
+    fallbackLng: 'en',
+
+    // Default namespace (your translation.json file)
+    ns: ['translation'],
+    defaultNS: 'translation',
+
     debug: process.env.NODE_ENV === 'development', // Enable debug logs in development
 
     interpolation: {
-      escapeValue: false, // React already protects against XSS
+      escapeValue: false, // react already safes from xss
     },
 
-    // This configuration tells i18next where to load translation files from.
-    // We'll load them from /locales/[language]/translation.json
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json',
+        loadPath: '/locales/{{lng}}/translation.json', // specify where to load translations from
     },
-    // We'll use the standard json file format,
-    // i.e. file path to json file namespace
-    // For example: public/locales/en/translation.json => namespace 'translation'
-    ns: ['translation'], // Specify the namespace(s)
-    defaultNS: 'translation', // Default namespace
 
-    // Resources are not needed when using the backend to load files
-    resources: {}
+    // Option to wait for translations to be loaded
+    react: {
+      wait: true // ADD THIS: Wait for translations to be loaded before rendering
+    }
   });
 
 export default i18n;

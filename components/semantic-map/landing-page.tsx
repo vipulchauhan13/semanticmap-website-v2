@@ -11,6 +11,7 @@ import AudioTranscriptPlayer from "./audio-transcript-player"
 // Replace the MinimalBackground import with WaveBackground
 import WaveBackground from "./wave-background"
 import ContactForm from "@/components/semantic-map/contact-form"
+import { useTranslation } from 'react-i18next'; // Ensure this import is present
 
 function Logo({ dark = false }: { dark?: boolean }) {
   return (
@@ -542,6 +543,15 @@ function CustomAnalysisPanel() {
 
 export default function SemanticMapLanding() {
   const [showContactForm, setShowContactForm] = useState(false)
+  const { t, i18n } = useTranslation(); // Get t AND i18n instance
+
+  // Function to toggle language
+  const toggleLanguage = () => {
+    const currentLanguage = i18n.language;
+    const newLanguage = currentLanguage === 'en' ? 'de' : 'en';
+    i18n.changeLanguage(newLanguage);
+  };
+
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-black text-white overflow-hidden">
       {/* Background */}
@@ -560,10 +570,10 @@ export default function SemanticMapLanding() {
 
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/use-cases" className="text-white/80 hover:text-white transition-colors">
-            Use Cases
+            {t('Use Cases')} {/* Ensure these links use t() */}
           </Link>
           <Link href="/pricing" className="text-white/80 hover:text-white transition-colors">
-            Pricing
+            {t('Pricing')} {/* Ensure these links use t() */}
           </Link>
           <Link
             href="/contact"
@@ -573,9 +583,15 @@ export default function SemanticMapLanding() {
               setShowContactForm(true)
             }}
           >
-            Contact
+            {t('Contact')} {/* Ensure these links use t() */}
           </Link>
-          <div className="ml-4 text-white/80 hover:text-white transition-colors">EN</div>
+          {/* Language Toggle Button */}
+          <button // Changed div to button for semantic correctness and accessibility
+            className="text-sm font-medium text-white/80 hover:text-white transition-colors cursor-pointer"
+            onClick={toggleLanguage} // Add the click handler
+          >
+            {i18n.language.toUpperCase()} {/* Display the current language */}
+          </button>
           <div className="flex items-center space-x-3">
             {/* Wrap Sign Up button with Link */}
             <Link href="https://app.semanticmap.com/signup" target="_blank" rel="noopener noreferrer">
@@ -603,7 +619,7 @@ export default function SemanticMapLanding() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight"
           >
-            Discover what matters
+            {t('Discover what matters')} {/* Ensure this uses t() */}
           </motion.h1>
 
           <motion.p
@@ -659,7 +675,7 @@ export default function SemanticMapLanding() {
             <div className="bg-black/80 backdrop-blur-sm rounded-lg overflow-hidden">
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://player.vimeo.com/video/1020467364?autoplay=1&loop=1&muted=0&controls=1"
+                  src="https://player.vimeo.com/video/1085953342?h=3cf2305b6f&autoplay=1&loop=1&muted=0&controls=1"
                   className="w-full h-full"
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
@@ -718,7 +734,7 @@ export default function SemanticMapLanding() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                       >
-                        <TypewriterEffect text="Mehr müssen wir gar nicht machen. Magst du was trinken?" />
+                        <TypewriterEffect text="What do you usually look for in luxury cosmetics packaging?" />
                       </motion.p>
                     </div>
                   </div>
@@ -736,7 +752,7 @@ export default function SemanticMapLanding() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1 }}
                       >
-                        <TypewriterEffect text="Ja, gerne. Vielleicht ein Wasser?" delay={1} />
+                        <TypewriterEffect text="Honestly, it should look nice on my shelf, but if it's hard to open or messy, I won't buy it again." delay={1} />
                       </motion.p>
                     </div>
                   </div>
@@ -754,7 +770,7 @@ export default function SemanticMapLanding() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 2 }}
                       >
-                        <TypewriterEffect text="Wir haben auch Saft oder Kaffee, wenn du möchtest." delay={2} />
+                        <TypewriterEffect text="So would you say functionality outweighs aesthetics when you're making a purchase?" delay={2} />
                       </motion.p>
                     </div>
                   </div>
@@ -946,8 +962,7 @@ export default function SemanticMapLanding() {
                     </div>
 
                     <div className="mt-4 p-3 bg-white/5 rounded border-l-2 border-green-400 italic text-sm text-white/80">
-                      "Bei einem hochwertigen Produkt, ist mir die Verpackung sehr wichtig. Wenn ich ein teures Produkt
-                      kaufe, will ich auch eine schöne und hochwertige Verpackung."
+                      "With a high-quality product, the packaging is very important to me. If I'm buying something expensive, I also want beautiful and premium packaging."
                       <div className="text-right text-green-400 text-xs mt-1">T6</div>
                     </div>
                   </div>

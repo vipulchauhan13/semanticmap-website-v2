@@ -94,7 +94,7 @@ eval("Promise.resolve(/*! import() eager */).then(__webpack_require__.t.bind(__w
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   I18nProvider: () => (/* binding */ I18nProvider)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(ssr)/./node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ \"(ssr)/./node_modules/react-i18next/dist/es/index.js\");\n/* harmony import */ var _lib_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/lib/i18n */ \"(ssr)/./lib/i18n.ts\");\n/* __next_internal_client_entry_do_not_use__ I18nProvider auto */ \n\n // Make sure this path is correct for your i18n config file\nfunction I18nProvider({ children }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_i18next__WEBPACK_IMPORTED_MODULE_1__.I18nextProvider, {\n        i18n: _lib_i18n__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        children: children\n    }, void 0, false, {\n        fileName: \"/Users/chauhv/Library/CloudStorage/OneDrive-Henkel/personal_sync/next/Dev Env Portal/git_repo/semanticmap-website-v2/components/i18n-provider.tsx\",\n        lineNumber: 13,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9jb21wb25lbnRzL2kxOG4tcHJvdmlkZXIudHN4IiwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUdnRDtBQUNsQixDQUFDLDJEQUEyRDtBQU1uRixTQUFTRSxhQUFhLEVBQUVDLFFBQVEsRUFBcUI7SUFDMUQscUJBQ0UsOERBQUNILDBEQUFlQTtRQUFDQyxNQUFNQSxpREFBSUE7a0JBQ3hCRTs7Ozs7O0FBR1AiLCJzb3VyY2VzIjpbIi9Vc2Vycy9jaGF1aHYvTGlicmFyeS9DbG91ZFN0b3JhZ2UvT25lRHJpdmUtSGVua2VsL3BlcnNvbmFsX3N5bmMvbmV4dC9EZXYgRW52IFBvcnRhbC9naXRfcmVwby9zZW1hbnRpY21hcC13ZWJzaXRlLXYyL2NvbXBvbmVudHMvaTE4bi1wcm92aWRlci50c3giXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnOyAvLyBUaGlzIGRpcmVjdGl2ZSBtYWtlcyB0aGlzIGNvbXBvbmVudCBhIENsaWVudCBDb21wb25lbnRcblxuaW1wb3J0IHsgUmVhY3ROb2RlIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgSTE4bmV4dFByb3ZpZGVyIH0gZnJvbSAncmVhY3QtaTE4bmV4dCc7XG5pbXBvcnQgaTE4biBmcm9tICdAL2xpYi9pMThuJzsgLy8gTWFrZSBzdXJlIHRoaXMgcGF0aCBpcyBjb3JyZWN0IGZvciB5b3VyIGkxOG4gY29uZmlnIGZpbGVcblxudHlwZSBJMThuUHJvdmlkZXJQcm9wcyA9IHtcbiAgY2hpbGRyZW46IFJlYWN0Tm9kZTtcbn07XG5cbmV4cG9ydCBmdW5jdGlvbiBJMThuUHJvdmlkZXIoeyBjaGlsZHJlbiB9OiBJMThuUHJvdmlkZXJQcm9wcykge1xuICByZXR1cm4gKFxuICAgIDxJMThuZXh0UHJvdmlkZXIgaTE4bj17aTE4bn0+XG4gICAgICB7Y2hpbGRyZW59XG4gICAgPC9JMThuZXh0UHJvdmlkZXI+XG4gICk7XG59Il0sIm5hbWVzIjpbIkkxOG5leHRQcm92aWRlciIsImkxOG4iLCJJMThuUHJvdmlkZXIiLCJjaGlsZHJlbiJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./components/i18n-provider.tsx\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   I18nProvider: () => (/* binding */ I18nProvider)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(ssr)/./node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ \"(ssr)/./node_modules/react-i18next/dist/es/index.js\");\n/* harmony import */ var _lib_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/lib/i18n */ \"(ssr)/./lib/i18n.ts\");\n/* __next_internal_client_entry_do_not_use__ I18nProvider auto */ \n\n // Ensure this import path is correct\n // Import useTranslation here\nfunction I18nProvider({ children }) {\n    const { ready } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(); // Get the ready state\n    // Optionally, you could show a loading indicator here\n    // if (!ready) {\n    //   return <div>Loading Translations...</div>;\n    // }\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_i18next__WEBPACK_IMPORTED_MODULE_1__.I18nextProvider, {\n        i18n: _lib_i18n__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n        children: children\n    }, void 0, false, {\n        fileName: \"/Users/chauhv/Library/CloudStorage/OneDrive-Henkel/personal_sync/next/Dev Env Portal/git_repo/semanticmap-website-v2/components/i18n-provider.tsx\",\n        lineNumber: 21,\n        columnNumber: 5\n    }, this);\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9jb21wb25lbnRzL2kxOG4tcHJvdmlkZXIudHN4IiwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUdnRDtBQUNsQixDQUFDLHFDQUFxQztBQUNyQixDQUFDLDZCQUE2QjtBQU10RSxTQUFTRyxhQUFhLEVBQUVDLFFBQVEsRUFBcUI7SUFDMUQsTUFBTSxFQUFFQyxLQUFLLEVBQUUsR0FBR0gsNkRBQWNBLElBQUksc0JBQXNCO0lBRTFELHNEQUFzRDtJQUN0RCxnQkFBZ0I7SUFDaEIsK0NBQStDO0lBQy9DLElBQUk7SUFFSixxQkFDRSw4REFBQ0YsMERBQWVBO1FBQUNDLE1BQU1BLGlEQUFJQTtrQkFDeEJHOzs7Ozs7QUFHUCIsInNvdXJjZXMiOlsiL1VzZXJzL2NoYXVodi9MaWJyYXJ5L0Nsb3VkU3RvcmFnZS9PbmVEcml2ZS1IZW5rZWwvcGVyc29uYWxfc3luYy9uZXh0L0RldiBFbnYgUG9ydGFsL2dpdF9yZXBvL3NlbWFudGljbWFwLXdlYnNpdGUtdjIvY29tcG9uZW50cy9pMThuLXByb3ZpZGVyLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCc7IC8vIFRoaXMgbWFrZXMgaXQgYSBDbGllbnQgQ29tcG9uZW50XG5cbmltcG9ydCB7IFJlYWN0Tm9kZSB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IEkxOG5leHRQcm92aWRlciB9IGZyb20gJ3JlYWN0LWkxOG5leHQnO1xuaW1wb3J0IGkxOG4gZnJvbSAnQC9saWIvaTE4bic7IC8vIEVuc3VyZSB0aGlzIGltcG9ydCBwYXRoIGlzIGNvcnJlY3RcbmltcG9ydCB7IHVzZVRyYW5zbGF0aW9uIH0gZnJvbSAncmVhY3QtaTE4bmV4dCc7IC8vIEltcG9ydCB1c2VUcmFuc2xhdGlvbiBoZXJlXG5cbnR5cGUgSTE4blByb3ZpZGVyUHJvcHMgPSB7XG4gIGNoaWxkcmVuOiBSZWFjdE5vZGU7XG59O1xuXG5leHBvcnQgZnVuY3Rpb24gSTE4blByb3ZpZGVyKHsgY2hpbGRyZW4gfTogSTE4blByb3ZpZGVyUHJvcHMpIHtcbiAgY29uc3QgeyByZWFkeSB9ID0gdXNlVHJhbnNsYXRpb24oKTsgLy8gR2V0IHRoZSByZWFkeSBzdGF0ZVxuXG4gIC8vIE9wdGlvbmFsbHksIHlvdSBjb3VsZCBzaG93IGEgbG9hZGluZyBpbmRpY2F0b3IgaGVyZVxuICAvLyBpZiAoIXJlYWR5KSB7XG4gIC8vICAgcmV0dXJuIDxkaXY+TG9hZGluZyBUcmFuc2xhdGlvbnMuLi48L2Rpdj47XG4gIC8vIH1cblxuICByZXR1cm4gKFxuICAgIDxJMThuZXh0UHJvdmlkZXIgaTE4bj17aTE4bn0+XG4gICAgICB7Y2hpbGRyZW59XG4gICAgPC9JMThuZXh0UHJvdmlkZXI+XG4gICk7XG59Il0sIm5hbWVzIjpbIkkxOG5leHRQcm92aWRlciIsImkxOG4iLCJ1c2VUcmFuc2xhdGlvbiIsIkkxOG5Qcm92aWRlciIsImNoaWxkcmVuIiwicmVhZHkiXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(ssr)/./components/i18n-provider.tsx\n");
 
 /***/ }),
 
@@ -105,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var i18next__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! i18next */ \"(ssr)/./node_modules/i18next/dist/esm/i18next.js\");\n/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ \"(ssr)/./node_modules/react-i18next/dist/es/index.js\");\n/* harmony import */ var i18next_browser_languagedetector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! i18next-browser-languagedetector */ \"(ssr)/./node_modules/i18next-browser-languagedetector/dist/esm/i18nextBrowserLanguageDetector.js\");\n\n\n\ni18next__WEBPACK_IMPORTED_MODULE_0__[\"default\"].use(i18next_browser_languagedetector__WEBPACK_IMPORTED_MODULE_2__[\"default\"]) // Detect user language (browser default initially)\n.use(react_i18next__WEBPACK_IMPORTED_MODULE_1__.initReactI18next) // Pass i18n to react-i18next\n.init({\n    fallbackLng: 'en',\n    debug: \"development\" === 'development',\n    interpolation: {\n        escapeValue: false\n    },\n    // This configuration tells i18next where to load translation files from.\n    // We'll load them from /locales/[language]/translation.json\n    backend: {\n        loadPath: '/locales/{{lng}}/translation.json'\n    },\n    // We'll use the standard json file format,\n    // i.e. file path to json file namespace\n    // For example: public/locales/en/translation.json => namespace 'translation'\n    ns: [\n        'translation'\n    ],\n    defaultNS: 'translation',\n    // Resources are not needed when using the backend to load files\n    resources: {}\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (i18next__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9saWIvaTE4bi50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQzJCO0FBQ3NCO0FBQ2U7QUFFaEVBLG1EQUNNLENBQUNFLHdFQUFnQkEsRUFBRSxtREFBbUQ7Q0FDekVDLEdBQUcsQ0FBQ0YsMkRBQWdCQSxFQUFFLDZCQUE2QjtDQUNuREcsSUFBSSxDQUFDO0lBQ0pDLGFBQWE7SUFDYkMsT0FBT0Msa0JBQXlCO0lBRWhDQyxlQUFlO1FBQ2JDLGFBQWE7SUFDZjtJQUVBLHlFQUF5RTtJQUN6RSw0REFBNEQ7SUFDNURDLFNBQVM7UUFDUEMsVUFBVTtJQUNaO0lBQ0EsMkNBQTJDO0lBQzNDLHdDQUF3QztJQUN4Qyw2RUFBNkU7SUFDN0VDLElBQUk7UUFBQztLQUFjO0lBQ25CQyxXQUFXO0lBRVgsZ0VBQWdFO0lBQ2hFQyxXQUFXLENBQUM7QUFDZDtBQUVGLGlFQUFlZCwrQ0FBSUEsRUFBQyIsInNvdXJjZXMiOlsiL1VzZXJzL2NoYXVodi9MaWJyYXJ5L0Nsb3VkU3RvcmFnZS9PbmVEcml2ZS1IZW5rZWwvcGVyc29uYWxfc3luYy9uZXh0L0RldiBFbnYgUG9ydGFsL2dpdF9yZXBvL3NlbWFudGljbWFwLXdlYnNpdGUtdjIvbGliL2kxOG4udHMiXSwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgaTE4biBmcm9tICdpMThuZXh0JztcbmltcG9ydCB7IGluaXRSZWFjdEkxOG5leHQgfSBmcm9tICdyZWFjdC1pMThuZXh0JztcbmltcG9ydCBMYW5ndWFnZURldGVjdG9yIGZyb20gJ2kxOG5leHQtYnJvd3Nlci1sYW5ndWFnZWRldGVjdG9yJztcblxuaTE4blxuICAudXNlKExhbmd1YWdlRGV0ZWN0b3IpIC8vIERldGVjdCB1c2VyIGxhbmd1YWdlIChicm93c2VyIGRlZmF1bHQgaW5pdGlhbGx5KVxuICAudXNlKGluaXRSZWFjdEkxOG5leHQpIC8vIFBhc3MgaTE4biB0byByZWFjdC1pMThuZXh0XG4gIC5pbml0KHtcbiAgICBmYWxsYmFja0xuZzogJ2VuJywgLy8gRmFsbGJhY2sgbGFuZ3VhZ2UgaWYgdXNlciBsYW5ndWFnZSBpcyBub3QgYXZhaWxhYmxlIG9yIGtleSBpcyBtaXNzaW5nXG4gICAgZGVidWc6IHByb2Nlc3MuZW52Lk5PREVfRU5WID09PSAnZGV2ZWxvcG1lbnQnLCAvLyBFbmFibGUgZGVidWcgbG9ncyBpbiBkZXZlbG9wbWVudFxuXG4gICAgaW50ZXJwb2xhdGlvbjoge1xuICAgICAgZXNjYXBlVmFsdWU6IGZhbHNlLCAvLyBSZWFjdCBhbHJlYWR5IHByb3RlY3RzIGFnYWluc3QgWFNTXG4gICAgfSxcblxuICAgIC8vIFRoaXMgY29uZmlndXJhdGlvbiB0ZWxscyBpMThuZXh0IHdoZXJlIHRvIGxvYWQgdHJhbnNsYXRpb24gZmlsZXMgZnJvbS5cbiAgICAvLyBXZSdsbCBsb2FkIHRoZW0gZnJvbSAvbG9jYWxlcy9bbGFuZ3VhZ2VdL3RyYW5zbGF0aW9uLmpzb25cbiAgICBiYWNrZW5kOiB7XG4gICAgICBsb2FkUGF0aDogJy9sb2NhbGVzL3t7bG5nfX0vdHJhbnNsYXRpb24uanNvbicsXG4gICAgfSxcbiAgICAvLyBXZSdsbCB1c2UgdGhlIHN0YW5kYXJkIGpzb24gZmlsZSBmb3JtYXQsXG4gICAgLy8gaS5lLiBmaWxlIHBhdGggdG8ganNvbiBmaWxlIG5hbWVzcGFjZVxuICAgIC8vIEZvciBleGFtcGxlOiBwdWJsaWMvbG9jYWxlcy9lbi90cmFuc2xhdGlvbi5qc29uID0+IG5hbWVzcGFjZSAndHJhbnNsYXRpb24nXG4gICAgbnM6IFsndHJhbnNsYXRpb24nXSwgLy8gU3BlY2lmeSB0aGUgbmFtZXNwYWNlKHMpXG4gICAgZGVmYXVsdE5TOiAndHJhbnNsYXRpb24nLCAvLyBEZWZhdWx0IG5hbWVzcGFjZVxuXG4gICAgLy8gUmVzb3VyY2VzIGFyZSBub3QgbmVlZGVkIHdoZW4gdXNpbmcgdGhlIGJhY2tlbmQgdG8gbG9hZCBmaWxlc1xuICAgIHJlc291cmNlczoge31cbiAgfSk7XG5cbmV4cG9ydCBkZWZhdWx0IGkxOG47Il0sIm5hbWVzIjpbImkxOG4iLCJpbml0UmVhY3RJMThuZXh0IiwiTGFuZ3VhZ2VEZXRlY3RvciIsInVzZSIsImluaXQiLCJmYWxsYmFja0xuZyIsImRlYnVnIiwicHJvY2VzcyIsImludGVycG9sYXRpb24iLCJlc2NhcGVWYWx1ZSIsImJhY2tlbmQiLCJsb2FkUGF0aCIsIm5zIiwiZGVmYXVsdE5TIiwicmVzb3VyY2VzIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./lib/i18n.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var i18next__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! i18next */ \"(ssr)/./node_modules/i18next/dist/esm/i18next.js\");\n/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ \"(ssr)/./node_modules/react-i18next/dist/es/index.js\");\n/* harmony import */ var i18next_http_backend__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! i18next-http-backend */ \"(ssr)/./node_modules/i18next-http-backend/esm/index.js\");\n\n\n\ni18next__WEBPACK_IMPORTED_MODULE_0__[\"default\"].use(i18next_http_backend__WEBPACK_IMPORTED_MODULE_2__[\"default\"]).use(react_i18next__WEBPACK_IMPORTED_MODULE_1__.initReactI18next) // Pass i18n instance to react-i18next\n.init({\n    // the translations\n    // you can learn more about on i18next documentation\n    // We will load translations from the public folder using the backend config instead of 'resources'\n    resources: {},\n    // Explicitly list supported languages\n    supportedLngs: [\n        'en',\n        'de'\n    ],\n    // Set the initial language\n    lng: 'en',\n    // Fallback language if the current language translations are not available\n    fallbackLng: 'en',\n    // Default namespace (your translation.json file)\n    ns: [\n        'translation'\n    ],\n    defaultNS: 'translation',\n    debug: \"development\" === 'development',\n    interpolation: {\n        escapeValue: false\n    },\n    backend: {\n        loadPath: '/locales/{{lng}}/translation.json'\n    },\n    // Option to wait for translations to be loaded\n    react: {\n        wait: true // ADD THIS: Wait for translations to be loaded before rendering\n    }\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (i18next__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9saWIvaTE4bi50cyIsIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQTJCO0FBQ3NCO0FBQ047QUFFM0NBLG1EQUNNLENBQUNFLDREQUFPQSxFQUNYQyxHQUFHLENBQUNGLDJEQUFnQkEsRUFBRSxzQ0FBc0M7Q0FDNURHLElBQUksQ0FBQztJQUNKLG1CQUFtQjtJQUNuQixvREFBb0Q7SUFDcEQsbUdBQW1HO0lBQ25HQyxXQUFXLENBQUM7SUFFWixzQ0FBc0M7SUFDdENDLGVBQWU7UUFBQztRQUFNO0tBQUs7SUFDM0IsMkJBQTJCO0lBQzNCQyxLQUFLO0lBQ0wsMkVBQTJFO0lBQzNFQyxhQUFhO0lBRWIsaURBQWlEO0lBQ2pEQyxJQUFJO1FBQUM7S0FBYztJQUNuQkMsV0FBVztJQUVYQyxPQUFPQyxrQkFBeUI7SUFFaENDLGVBQWU7UUFDYkMsYUFBYTtJQUNmO0lBRUFDLFNBQVM7UUFDTEMsVUFBVTtJQUNkO0lBRUEsK0NBQStDO0lBQy9DQyxPQUFPO1FBQ0xDLE1BQU0sS0FBSyxnRUFBZ0U7SUFDN0U7QUFDRjtBQUVGLGlFQUFlbEIsK0NBQUlBLEVBQUMiLCJzb3VyY2VzIjpbIi9Vc2Vycy9jaGF1aHYvTGlicmFyeS9DbG91ZFN0b3JhZ2UvT25lRHJpdmUtSGVua2VsL3BlcnNvbmFsX3N5bmMvbmV4dC9EZXYgRW52IFBvcnRhbC9naXRfcmVwby9zZW1hbnRpY21hcC13ZWJzaXRlLXYyL2xpYi9pMThuLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBpMThuIGZyb20gJ2kxOG5leHQnO1xuaW1wb3J0IHsgaW5pdFJlYWN0STE4bmV4dCB9IGZyb20gJ3JlYWN0LWkxOG5leHQnO1xuaW1wb3J0IEJhY2tlbmQgZnJvbSAnaTE4bmV4dC1odHRwLWJhY2tlbmQnO1xuXG5pMThuXG4gIC51c2UoQmFja2VuZClcbiAgLnVzZShpbml0UmVhY3RJMThuZXh0KSAvLyBQYXNzIGkxOG4gaW5zdGFuY2UgdG8gcmVhY3QtaTE4bmV4dFxuICAuaW5pdCh7XG4gICAgLy8gdGhlIHRyYW5zbGF0aW9uc1xuICAgIC8vIHlvdSBjYW4gbGVhcm4gbW9yZSBhYm91dCBvbiBpMThuZXh0IGRvY3VtZW50YXRpb25cbiAgICAvLyBXZSB3aWxsIGxvYWQgdHJhbnNsYXRpb25zIGZyb20gdGhlIHB1YmxpYyBmb2xkZXIgdXNpbmcgdGhlIGJhY2tlbmQgY29uZmlnIGluc3RlYWQgb2YgJ3Jlc291cmNlcydcbiAgICByZXNvdXJjZXM6IHt9LFxuXG4gICAgLy8gRXhwbGljaXRseSBsaXN0IHN1cHBvcnRlZCBsYW5ndWFnZXNcbiAgICBzdXBwb3J0ZWRMbmdzOiBbJ2VuJywgJ2RlJ10sXG4gICAgLy8gU2V0IHRoZSBpbml0aWFsIGxhbmd1YWdlXG4gICAgbG5nOiAnZW4nLFxuICAgIC8vIEZhbGxiYWNrIGxhbmd1YWdlIGlmIHRoZSBjdXJyZW50IGxhbmd1YWdlIHRyYW5zbGF0aW9ucyBhcmUgbm90IGF2YWlsYWJsZVxuICAgIGZhbGxiYWNrTG5nOiAnZW4nLFxuXG4gICAgLy8gRGVmYXVsdCBuYW1lc3BhY2UgKHlvdXIgdHJhbnNsYXRpb24uanNvbiBmaWxlKVxuICAgIG5zOiBbJ3RyYW5zbGF0aW9uJ10sXG4gICAgZGVmYXVsdE5TOiAndHJhbnNsYXRpb24nLFxuXG4gICAgZGVidWc6IHByb2Nlc3MuZW52Lk5PREVfRU5WID09PSAnZGV2ZWxvcG1lbnQnLCAvLyBFbmFibGUgZGVidWcgbG9ncyBpbiBkZXZlbG9wbWVudFxuXG4gICAgaW50ZXJwb2xhdGlvbjoge1xuICAgICAgZXNjYXBlVmFsdWU6IGZhbHNlLCAvLyByZWFjdCBhbHJlYWR5IHNhZmVzIGZyb20geHNzXG4gICAgfSxcblxuICAgIGJhY2tlbmQ6IHtcbiAgICAgICAgbG9hZFBhdGg6ICcvbG9jYWxlcy97e2xuZ319L3RyYW5zbGF0aW9uLmpzb24nLCAvLyBzcGVjaWZ5IHdoZXJlIHRvIGxvYWQgdHJhbnNsYXRpb25zIGZyb21cbiAgICB9LFxuXG4gICAgLy8gT3B0aW9uIHRvIHdhaXQgZm9yIHRyYW5zbGF0aW9ucyB0byBiZSBsb2FkZWRcbiAgICByZWFjdDoge1xuICAgICAgd2FpdDogdHJ1ZSAvLyBBREQgVEhJUzogV2FpdCBmb3IgdHJhbnNsYXRpb25zIHRvIGJlIGxvYWRlZCBiZWZvcmUgcmVuZGVyaW5nXG4gICAgfVxuICB9KTtcblxuZXhwb3J0IGRlZmF1bHQgaTE4bjsiXSwibmFtZXMiOlsiaTE4biIsImluaXRSZWFjdEkxOG5leHQiLCJCYWNrZW5kIiwidXNlIiwiaW5pdCIsInJlc291cmNlcyIsInN1cHBvcnRlZExuZ3MiLCJsbmciLCJmYWxsYmFja0xuZyIsIm5zIiwiZGVmYXVsdE5TIiwiZGVidWciLCJwcm9jZXNzIiwiaW50ZXJwb2xhdGlvbiIsImVzY2FwZVZhbHVlIiwiYmFja2VuZCIsImxvYWRQYXRoIiwicmVhY3QiLCJ3YWl0Il0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./lib/i18n.ts\n");
 
 /***/ }),
 
@@ -173,6 +173,28 @@ module.exports = require("next/dist/server/app-render/work-unit-async-storage.ex
 
 /***/ }),
 
+/***/ "http":
+/*!***********************!*\
+  !*** external "http" ***!
+  \***********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("http");
+
+/***/ }),
+
+/***/ "https":
+/*!************************!*\
+  !*** external "https" ***!
+  \************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("https");
+
+/***/ }),
+
 /***/ "next/dist/compiled/next-server/app-page.runtime.dev.js":
 /*!*************************************************************************!*\
   !*** external "next/dist/compiled/next-server/app-page.runtime.dev.js" ***!
@@ -193,6 +215,50 @@ module.exports = require("next/dist/compiled/next-server/app-page.runtime.dev.js
 "use strict";
 module.exports = require("path");
 
+/***/ }),
+
+/***/ "punycode":
+/*!***************************!*\
+  !*** external "punycode" ***!
+  \***************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("punycode");
+
+/***/ }),
+
+/***/ "stream":
+/*!*************************!*\
+  !*** external "stream" ***!
+  \*************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("stream");
+
+/***/ }),
+
+/***/ "url":
+/*!**********************!*\
+  !*** external "url" ***!
+  \**********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("url");
+
+/***/ }),
+
+/***/ "zlib":
+/*!***********************!*\
+  !*** external "zlib" ***!
+  \***********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("zlib");
+
 /***/ })
 
 };
@@ -202,7 +268,7 @@ module.exports = require("path");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/i18next","vendor-chunks/react-i18next","vendor-chunks/i18next-browser-languagedetector","vendor-chunks/@swc","vendor-chunks/html-parse-stringify","vendor-chunks/void-elements","vendor-chunks/geist"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2F_not-found%2Fpage&page=%2F_not-found%2Fpage&appPaths=&pagePath=node_modules%2Fnext%2Fdist%2Fclient%2Fcomponents%2Fnot-found-error.js&appDir=%2FUsers%2Fchauhv%2FLibrary%2FCloudStorage%2FOneDrive-Henkel%2Fpersonal_sync%2Fnext%2FDev%20Env%20Portal%2Fgit_repo%2Fsemanticmap-website-v2%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fchauhv%2FLibrary%2FCloudStorage%2FOneDrive-Henkel%2Fpersonal_sync%2Fnext%2FDev%20Env%20Portal%2Fgit_repo%2Fsemanticmap-website-v2&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/i18next","vendor-chunks/react-i18next","vendor-chunks/i18next-http-backend","vendor-chunks/@swc","vendor-chunks/html-parse-stringify","vendor-chunks/void-elements","vendor-chunks/geist"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2F_not-found%2Fpage&page=%2F_not-found%2Fpage&appPaths=&pagePath=node_modules%2Fnext%2Fdist%2Fclient%2Fcomponents%2Fnot-found-error.js&appDir=%2FUsers%2Fchauhv%2FLibrary%2FCloudStorage%2FOneDrive-Henkel%2Fpersonal_sync%2Fnext%2FDev%20Env%20Portal%2Fgit_repo%2Fsemanticmap-website-v2%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fchauhv%2FLibrary%2FCloudStorage%2FOneDrive-Henkel%2Fpersonal_sync%2Fnext%2FDev%20Env%20Portal%2Fgit_repo%2Fsemanticmap-website-v2&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();
