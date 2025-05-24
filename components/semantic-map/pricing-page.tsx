@@ -8,35 +8,38 @@ import { Check, Phone, Mail, MapPin } from "lucide-react"
 import Logo from "./logo"
 import ContactForm from "./contact-form"
 import WaveBackground from "./wave-background"
+import { useLanguage } from "@/contexts/language-context"
+import LanguageSwitcher from "@/components/language-switcher"
 
 export default function PricingPage() {
   const [showContactForm, setShowContactForm] = useState(false)
+  const { t } = useLanguage()
 
   const pricingTiers = [
     {
-      name: "Trial",
-      price: "Free",
-      features: ["1 project", "500 minutes of audio", "Core features"],
-      buttonText: "Start Free Trial",
+      name: t("Trial"),
+      price: t("Free"),
+      features: [t("1 project"), t("500 minutes of audio"), t("Core features")],
+      buttonText: t("Start Free Trial"),
       buttonVariant: "outline" as const,
     },
     {
-      name: "Pay-as-you-go",
-      price: "€0.15/minute audio",
-      features: ["Unlimited projects", "Unlimited minutes of audio", "Basic support", "All features"],
-      buttonText: "Get Started",
+      name: t("Pay-as-you-go"),
+      price: t("€0.15/minute audio"),
+      features: [t("Unlimited projects"), t("Unlimited minutes of audio"), t("Basic support"), t("All features")],
+      buttonText: t("Get Started"),
       buttonVariant: "default" as const,
       highlighted: true,
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: t("Enterprise"),
+      price: t("Custom"),
       features: [
-        "Unlimited projects",
-        "Unlimited audio",
-        "24/7 dedicated support",
-        "Custom features",
-        "On-premise option",
+        t("Unlimited projects"),
+        t("Unlimited audio"),
+        t("24/7 dedicated support"),
+        t("Custom features"),
+        t("On-premise option"),
       ],
       onClick: () => setShowContactForm(true),
     },
@@ -59,10 +62,10 @@ export default function PricingPage() {
 
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/use-cases" className="text-white/80 hover:text-white transition-colors">
-            Use Cases
+            {t("Use Cases")}
           </Link>
           <Link href="/pricing" className="text-white hover:text-white transition-colors font-medium">
-            Pricing
+            {t("Pricing")}
           </Link>
           <Link
             href="/contact"
@@ -72,17 +75,17 @@ export default function PricingPage() {
               setShowContactForm(true)
             }}
           >
-            Contact
+            {t("Contact")}
           </Link>
-          <div className="ml-4 text-white/80 hover:text-white transition-colors">EN</div>
+          <LanguageSwitcher />
           <div className="flex items-center space-x-3">
             <Button
               variant="outline"
               className="border-white/20 bg-transparent hover:bg-white/10 text-white rounded-full px-6"
             >
-              Sign Up
+              {t("Sign Up")}
             </Button>
-            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Login</Button>
+            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">{t("Login")}</Button>
           </div>
         </div>
       </header>
@@ -97,7 +100,7 @@ export default function PricingPage() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight"
           >
-            Pricing Plans
+            {t("Pricing Plans")}
           </motion.h1>
 
           <motion.p
@@ -106,7 +109,7 @@ export default function PricingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto"
           >
-            Choose the perfect plan to elevate your market research with Semantic Map
+            {t("Choose the perfect plan to elevate your market research with Semantic Map")}
           </motion.p>
         </div>
 
@@ -148,16 +151,16 @@ export default function PricingPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Not sure which plan is right for you?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("Not sure which plan is right for you?")}</h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-              Our team is here to help you find the perfect solution for your needs.
+              {t("Our team is here to help you find the perfect solution for your needs.")}
             </p>
             <Button
               size="lg"
               onClick={() => setShowContactForm(true)}
               className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg font-medium"
             >
-              Contact Us
+              {t("Contact Us")}
             </Button>
           </motion.div>
         </div>
@@ -190,7 +193,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Contact Us */}
             <div>
-              <h3 className="text-white text-xl font-medium mb-6">Contact Us</h3>
+              <h3 className="text-white text-xl font-medium mb-6">{t("Contact Us")}</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-white/60 mr-3" />
@@ -217,16 +220,16 @@ export default function PricingPage() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-white text-xl font-medium mb-6">Quick Links</h3>
+              <h3 className="text-white text-xl font-medium mb-6">{t("Quick Links")}</h3>
               <div className="space-y-3">
                 <div>
                   <Link href="/use-cases" className="text-white/80 hover:text-white transition-colors">
-                    Use Cases
+                    {t("Use Cases")}
                   </Link>
                 </div>
                 <div>
                   <Link href="/pricing" className="text-white/80 hover:text-white transition-colors">
-                    Pricing
+                    {t("Pricing")}
                   </Link>
                 </div>
               </div>
@@ -234,21 +237,21 @@ export default function PricingPage() {
 
             {/* Legal */}
             <div>
-              <h3 className="text-white text-xl font-medium mb-6">Legal</h3>
+              <h3 className="text-white text-xl font-medium mb-6">{t("Legal")}</h3>
               <div className="space-y-3">
                 <div>
                   <Link href="/privacy" className="text-white/80 hover:text-white transition-colors">
-                    Data Privacy Policy
+                    {t("Data Privacy Policy")}
                   </Link>
                 </div>
                 <div>
                   <Link href="/terms" className="text-white/80 hover:text-white transition-colors">
-                    Terms of Service
+                    {t("Terms of Service")}
                   </Link>
                 </div>
                 <div>
                   <Link href="/imprint" className="text-white/80 hover:text-white transition-colors">
-                    Imprint
+                    {t("Imprint")}
                   </Link>
                 </div>
               </div>

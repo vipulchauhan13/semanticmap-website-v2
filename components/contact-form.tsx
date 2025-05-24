@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
 import { useLanguage } from "@/contexts/language-context"
-import Link from "next/link"
 
 interface ContactFormProps {
   onClose?: () => void
@@ -184,5 +183,13 @@ export default function ContactForm({ onClose }: ContactFormProps) {
         </motion.div>
       )}
     </div>
+  )
+}
+
+function Link({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) {
+  return (
+    <a href={href} className={className}>
+      {children}
+    </a>
   )
 }

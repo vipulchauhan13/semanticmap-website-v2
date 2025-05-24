@@ -4,6 +4,7 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { ChevronDown, ChevronUp } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 interface UseCaseProps {
   id: number
@@ -26,6 +27,8 @@ interface UseCaseCardProps {
 }
 
 export default function UseCaseCard({ useCase, isActive, onClick }: UseCaseCardProps) {
+  const { t } = useLanguage()
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -56,7 +59,7 @@ export default function UseCaseCard({ useCase, isActive, onClick }: UseCaseCardP
       </div>
 
       <div className="mt-4 text-sm text-white/60 flex items-center">
-        <span>{isActive ? "Click to collapse" : "Click to explore"}</span>
+        <span>{isActive ? t("Click to collapse") : t("Click to explore")}</span>
       </div>
     </motion.div>
   )

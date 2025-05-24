@@ -4,6 +4,7 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 interface UseCaseProps {
   id: number
@@ -24,6 +25,8 @@ interface UseCaseDetailProps {
 }
 
 export default function UseCaseDetail({ useCase }: UseCaseDetailProps) {
+  const { t } = useLanguage()
+
   return (
     <div className="bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 backdrop-blur-sm">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -37,17 +40,17 @@ export default function UseCaseDetail({ useCase }: UseCaseDetailProps) {
 
           <div className="space-y-6">
             <div>
-              <h4 className="text-lg font-medium mb-2 text-white/90">The Challenge</h4>
+              <h4 className="text-lg font-medium mb-2 text-white/90">{t("The Challenge")}</h4>
               <p className="text-white/70">{useCase.challenge}</p>
             </div>
 
             <div>
-              <h4 className="text-lg font-medium mb-2 text-white/90">Our Solution</h4>
+              <h4 className="text-lg font-medium mb-2 text-white/90">{t("Our Solution")}</h4>
               <p className="text-white/70">{useCase.solution}</p>
             </div>
 
             <div>
-              <h4 className="text-lg font-medium mb-2 text-white/90">Key Benefits</h4>
+              <h4 className="text-lg font-medium mb-2 text-white/90">{t("Key Benefits")}</h4>
               <ul className="space-y-2">
                 {useCase.benefits.map((benefit, index) => (
                   <motion.li
@@ -65,7 +68,7 @@ export default function UseCaseDetail({ useCase }: UseCaseDetailProps) {
             </div>
 
             <div>
-              <h4 className="text-lg font-medium mb-2 text-white/90">Key Features</h4>
+              <h4 className="text-lg font-medium mb-2 text-white/90">{t("Key Features")}</h4>
               <div className="flex flex-wrap gap-2">
                 {useCase.features.map((feature, index) => (
                   <motion.span

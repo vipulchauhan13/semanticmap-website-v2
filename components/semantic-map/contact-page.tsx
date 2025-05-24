@@ -8,9 +8,12 @@ import Logo from "./logo"
 import ContactForm from "./contact-form"
 import WaveBackground from "./wave-background"
 import { useState } from "react"
+import { useLanguage } from "@/contexts/language-context"
+import LanguageSwitcher from "@/components/language-switcher"
 
 export default function ContactPage() {
   const [showContactForm, setShowContactForm] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-black text-white overflow-hidden">
@@ -29,10 +32,10 @@ export default function ContactPage() {
 
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/use-cases" className="text-white/80 hover:text-white transition-colors">
-            Use Cases
+            {t("Use Cases")}
           </Link>
           <Link href="/pricing" className="text-white/80 hover:text-white transition-colors">
-            Pricing
+            {t("Pricing")}
           </Link>
           <Link
             href="/contact"
@@ -42,17 +45,17 @@ export default function ContactPage() {
               setShowContactForm(true)
             }}
           >
-            Contact
+            {t("Contact")}
           </Link>
-          <div className="ml-4 text-white/80 hover:text-white transition-colors">EN</div>
+          <LanguageSwitcher />
           <div className="flex items-center space-x-3">
             <Button
               variant="outline"
               className="border-white/20 bg-transparent hover:bg-white/10 text-white rounded-full px-6"
             >
-              Sign Up
+              {t("Sign Up")}
             </Button>
-            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Login</Button>
+            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">{t("Login")}</Button>
           </div>
         </div>
       </header>
@@ -63,10 +66,11 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Contact Info */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <h1 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">Get in Touch</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">{t("Get in Touch")}</h1>
               <p className="text-lg text-white/80 mb-8">
-                Have questions about our platform or need a personalized demo? Our team is here to help you get the most
-                out of Semantic Map.
+                {t(
+                  "Have questions about our platform or need a personalized demo? Our team is here to help you get the most out of Semantic Map.",
+                )}
               </p>
 
               <div className="space-y-6 mb-8">
@@ -75,7 +79,7 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-white/80" />
                   </div>
                   <div>
-                    <div className="text-sm text-white/60">Phone</div>
+                    <div className="text-sm text-white/60">{t("Phone")}</div>
                     <a href="tel:+4917758440003" className="text-white hover:text-white/80 transition-colors">
                       +49 17758440003
                     </a>
@@ -87,7 +91,7 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-white/80" />
                   </div>
                   <div>
-                    <div className="text-sm text-white/60">Email</div>
+                    <div className="text-sm text-white/60">{t("Email")}</div>
                     <a href="mailto:info@semanticmap.com" className="text-white hover:text-white/80 transition-colors">
                       info@semanticmap.com
                     </a>
@@ -99,7 +103,7 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-white/80" />
                   </div>
                   <div>
-                    <div className="text-sm text-white/60">Location</div>
+                    <div className="text-sm text-white/60">{t("Location")}</div>
                     <div className="text-white">
                       North Rhine-Westphalia,
                       <br />
@@ -150,7 +154,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Contact Us */}
             <div>
-              <h3 className="text-white text-xl font-medium mb-6">Contact Us</h3>
+              <h3 className="text-white text-xl font-medium mb-6">{t("Contact Us")}</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-white/60 mr-3" />
@@ -177,21 +181,21 @@ export default function ContactPage() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-white text-xl font-medium mb-6">Quick Links</h3>
+              <h3 className="text-white text-xl font-medium mb-6">{t("Quick Links")}</h3>
               <div className="space-y-3">
                 <div>
                   <Link href="/use-cases" className="text-white/80 hover:text-white transition-colors">
-                    Use Cases
+                    {t("Use Cases")}
                   </Link>
                 </div>
                 <div>
                   <Link href="/pricing" className="text-white/80 hover:text-white transition-colors">
-                    Pricing
+                    {t("Pricing")}
                   </Link>
                 </div>
                 <div>
                   <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
-                    Contact
+                    {t("Contact")}
                   </Link>
                 </div>
               </div>
@@ -199,21 +203,21 @@ export default function ContactPage() {
 
             {/* Legal */}
             <div>
-              <h3 className="text-white text-xl font-medium mb-6">Legal</h3>
+              <h3 className="text-white text-xl font-medium mb-6">{t("Legal")}</h3>
               <div className="space-y-3">
                 <div>
                   <Link href="/privacy" className="text-white/80 hover:text-white transition-colors">
-                    Data Privacy Policy
+                    {t("Data Privacy Policy")}
                   </Link>
                 </div>
                 <div>
                   <Link href="/terms" className="text-white/80 hover:text-white transition-colors">
-                    Terms of Service
+                    {t("Terms of Service")}
                   </Link>
                 </div>
                 <div>
                   <Link href="/imprint" className="text-white/80 hover:text-white transition-colors">
-                    Imprint
+                    {t("Imprint")}
                   </Link>
                 </div>
               </div>

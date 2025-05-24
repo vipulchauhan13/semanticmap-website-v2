@@ -1,12 +1,14 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { GeistSans } from 'geist/font/sans'
-import { I18nProvider } from "@/components/i18n-provider"
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { LanguageProvider } from "@/contexts/language-context"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: "Semantic Map",
+  description: "Discover what matters in your research data",
 }
 
 export default function RootLayout({
@@ -15,11 +17,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={GeistSans.className}>
-      <body>
-        <I18nProvider>
-          {children}
-        </I18nProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   )

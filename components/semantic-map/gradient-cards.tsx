@@ -1,8 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function GradientCardsV2() {
+  const { t } = useLanguage()
+
   return (
     <div className="w-full bg-black py-24">
       <div className="container mx-auto px-4 max-w-5xl">
@@ -27,7 +30,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-blue-400 text-sm font-light mb-2"
                 >
-                  Time Efficiency
+                  {t("Time Efficiency")}
                 </motion.div>
                 <motion.h3
                   initial={{ opacity: 0, y: 10 }}
@@ -36,7 +39,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-3xl font-light text-white mb-4"
                 >
-                  98% Time Savings
+                  {t("98% Time Savings")}
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
@@ -45,7 +48,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-white/60 text-sm max-w-xs"
                 >
-                  Eliminate manual transcription and analysis. What used to take weeks now takes minutes.
+                  {t("Eliminate manual transcription and analysis. What used to take weeks now takes minutes.")}
                 </motion.p>
               </div>
 
@@ -57,7 +60,7 @@ export default function GradientCardsV2() {
                 className="flex items-center"
               >
                 <div className="h-px w-8 bg-blue-400/40 mr-4"></div>
-                <span className="text-blue-400 text-sm">8x faster insights</span>
+                <span className="text-blue-400 text-sm">{t("8x faster insights")}</span>
               </motion.div>
             </div>
           </motion.div>
@@ -82,7 +85,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-green-400 text-sm font-light mb-2"
                 >
-                  Cost Efficiency
+                  {t("Cost Efficiency")}
                 </motion.div>
                 <motion.h3
                   initial={{ opacity: 0, y: 10 }}
@@ -91,7 +94,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-3xl font-light text-white mb-4"
                 >
-                  Reduce Costs by 97%
+                  {t("Reduce Costs by 97%")}
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
@@ -100,7 +103,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-white/60 text-sm max-w-xs"
                 >
-                  Lower your research costs dramatically by automating expensive manual processes.
+                  {t("Lower your research costs dramatically by automating expensive manual processes.")}
                 </motion.p>
               </div>
 
@@ -112,7 +115,7 @@ export default function GradientCardsV2() {
                 className="flex items-center"
               >
                 <div className="h-px w-8 bg-green-400/40 mr-4"></div>
-                <span className="text-green-400 text-sm">Higher ROI on research</span>
+                <span className="text-green-400 text-sm">{t("Higher ROI on research")}</span>
               </motion.div>
             </div>
           </motion.div>
@@ -137,7 +140,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-purple-400 text-sm font-light mb-2"
                 >
-                  Strategic Value
+                  {t("Strategic Value")}
                 </motion.div>
                 <motion.h3
                   initial={{ opacity: 0, y: 10 }}
@@ -146,7 +149,7 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-3xl font-light text-white mb-4"
                 >
-                  Make Better Decisions
+                  {t("Make Better Decisions")}
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
@@ -155,8 +158,9 @@ export default function GradientCardsV2() {
                   viewport={{ once: true }}
                   className="text-white/60 text-sm max-w-xs"
                 >
-                  Uncover hidden patterns and insights across multiple interviews. Discover demographic trends that
-                  transform your research into actionable strategy.
+                  {t(
+                    "Uncover hidden patterns and insights across multiple interviews. Discover demographic trends that transform your research into actionable strategy.",
+                  )}
                 </motion.p>
               </div>
 
@@ -168,7 +172,7 @@ export default function GradientCardsV2() {
                 className="flex items-center"
               >
                 <div className="h-px w-8 bg-purple-400/40 mr-4"></div>
-                <span className="text-purple-400 text-sm">Data-driven strategy</span>
+                <span className="text-purple-400 text-sm">{t("Data-driven strategy")}</span>
               </motion.div>
             </div>
           </motion.div>
