@@ -10,7 +10,10 @@ import GradientCardsV2 from "./gradient-cards"
 import AudioTranscriptPlayer from "./audio-transcript-player"
 // Replace the MinimalBackground import with WaveBackground
 import WaveBackground from "./wave-background"
-import ContactForm from "@/components/semantic-map/contact-form"
+import ContactForm from "@/components/contact-form"
+import { useLanguage } from "@/contexts/language-context"
+import LanguageSwitcher from "@/components/language-switcher"
+
 
 function Logo({ dark = false }: { dark?: boolean }) {
   return (
@@ -123,6 +126,7 @@ function TypingAnimation({ phrases }: { phrases: string[] }) {
   const [isDeleting, setIsDeleting] = React.useState(false)
   const [typingSpeed, setTypingSpeed] = React.useState(80)
 
+
   React.useEffect(() => {
     const currentPhrase = phrases[currentPhraseIndex]
 
@@ -177,6 +181,7 @@ function CustomAnalysisPanel() {
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [showResults, setShowResults] = useState(false)
   const [analysisType, setAnalysisType] = useState("concise")
+  const { t } = useLanguage()
 
   const handleAnalyze = () => {
     console.log("Analyze button clicked")
@@ -209,7 +214,7 @@ function CustomAnalysisPanel() {
             {/* Analysis Settings Panel */}
             <div className="p-6 bg-white/5 rounded-lg border border-white/10 shadow-lg backdrop-blur-sm h-full">
               <div className="flex items-center justify-between mb-5">
-                <h4 className="text-xl font-medium text-white">Analysis Settings</h4>
+                <h4 className="text-xl font-medium text-white">{t("Analysis Settings")}</h4>
                 <motion.button
                   className="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors"
                   whileHover={{ rotate: 180 }}
@@ -220,50 +225,55 @@ function CustomAnalysisPanel() {
               </div>
 
               <div className="mb-5">
-                <label className="block text-sm text-white/70 mb-2">What would you like to deep dive into?</label>
+                <label className="block text-sm text-white/70 mb-2">
+                  {t("What would you like to deep dive into?")}
+                </label>
                 <div className="relative">
                   <TypingAnimation
                     phrases={[
-                      "Comparison of consumer perceptions of sustainability in premium vs. regular cosmetics",
-                      "Analysis of packaging preferences across different age demographics",
-                      "Examination of perceived barriers to adopting more sustainable cosmetic products",
-                      "Correlation between price sensitivity and environmental consciousness",
-                      "Multi-dimensional analysis of product efficacy, sustainability, and price in consumer decision-making",
+                      t("Comparison of consumer perceptions of sustainability in premium vs. regular cosmetics"),
+                      t("Analysis of packaging preferences across different age demographics"),
+                      t("Examination of perceived barriers to adopting more sustainable cosmetic products"),
+                      t("Correlation between price sensitivity and environmental consciousness"),
+                      t(
+                        "Multi-dimensional analysis of product efficacy, sustainability, and price in consumer decision-making",
+                      ),
                     ]}
                   />
                 </div>
               </div>
 
               <div className="mb-5">
-                <div className="text-sm text-white/70 mb-2">Suggested Topics</div>
+                <div className="text-sm text-white/70 mb-2">{t("Suggested Topics")}</div>
                 <div className="space-y-3">
                   <motion.div
                     className="p-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-white/10 rounded-md text-sm text-white/90 shadow-sm"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    Comparison of consumer perceptions of sustainability in premium vs. regular cosmetics
+                    {t("Comparison of consumer perceptions of sustainability in premium vs. regular cosmetics")}
                   </motion.div>
                   <motion.div
                     className="p-3 bg-white/5 border border-white/10 rounded-md text-sm text-white/80 hover:bg-white/10 transition-colors cursor-pointer shadow-sm"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    Examination of perceived barriers to adopting more sustainable cosmetic products
+                    {t("Examination of perceived barriers to adopting more sustainable cosmetic products")}
                   </motion.div>
                   <motion.div
                     className="p-3 bg-white/5 border border-white/10 rounded-md text-sm text-white/80 hover:bg-white/10 transition-colors cursor-pointer shadow-sm"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    Multi-dimensional analysis of the interplay between product efficacy, sustainability, packaging
-                    aesthetics, and price in consumer decision-making for luxury cosmetics
+                    {t(
+                      "Multi-dimensional analysis of the interplay between product efficacy, sustainability, packaging aesthetics, and price in consumer decision-making for luxury cosmetics",
+                    )}
                   </motion.div>
                 </div>
               </div>
 
               <div className="mb-6">
-                <div className="text-sm text-white/70 mb-2">Analysis Type</div>
+                <div className="text-sm text-white/70 mb-2">{t("Analysis Type")}</div>
                 <div className="flex items-center space-x-6">
                   <label className="flex items-center cursor-pointer">
                     <div className="relative">
@@ -282,7 +292,7 @@ function CustomAnalysisPanel() {
                         ></motion.div>
                       </div>
                     </div>
-                    <span className="ml-2 text-sm text-white/90">Concise</span>
+                    <span className="ml-2 text-sm text-white/90">{t("Concise")}</span>
                   </label>
                   <label className="flex items-center cursor-pointer">
                     <div className="relative">
@@ -301,7 +311,7 @@ function CustomAnalysisPanel() {
                         ></motion.div>
                       </div>
                     </div>
-                    <span className="ml-2 text-sm text-white/90">Comprehensive</span>
+                    <span className="ml-2 text-sm text-white/90">{t("Comprehensive")}</span>
                   </label>
                 </div>
               </div>
@@ -315,7 +325,7 @@ function CustomAnalysisPanel() {
               >
                 {isAnalyzing ? (
                   <>
-                    <span className="opacity-0">Analyze</span>
+                    <span className="opacity-0">{t("Analyze")}</span>
                     <motion.div
                       className="absolute inset-0 flex items-center justify-center"
                       initial={{ opacity: 0 }}
@@ -326,11 +336,11 @@ function CustomAnalysisPanel() {
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                       />
-                      <span className="ml-2">Analyzing...</span>
+                      <span className="ml-2">{t("Analyzing...")}</span>
                     </motion.div>
                   </>
                 ) : (
-                  "Analyze"
+                  t("Analyze")
                 )}
               </motion.button>
             </div>
@@ -357,7 +367,7 @@ function CustomAnalysisPanel() {
                   >
                     <ArrowLeft className="h-4 w-4 text-white/70" />
                   </motion.button>
-                  <h4 className="text-xl font-medium text-white">Analysis Results</h4>
+                  <h4 className="text-xl font-medium text-white">{t("Analysis Results")}</h4>
                 </div>
                 <motion.button className="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
                   <Lightbulb className="h-4 w-4 text-white/70" />
@@ -365,8 +375,9 @@ function CustomAnalysisPanel() {
               </div>
 
               <div className="text-sm text-white/70 mb-3">
-                Analysis results for: Comparison of consumer perceptions of sustainability in premium vs. regular
-                cosmetics
+                {t(
+                  "Analysis results for: Comparison of consumer perceptions of sustainability in premium vs. regular cosmetics",
+                )}
               </div>
 
               <motion.div
@@ -376,8 +387,9 @@ function CustomAnalysisPanel() {
                 transition={{ delay: 0.1, duration: 0.5 }}
               >
                 <p className="text-sm text-white/90 mb-3">
-                  Here's a concise analysis comparing consumer perceptions of sustainability in premium vs. regular
-                  cosmetics:
+                  {t(
+                    "Here's a concise analysis comparing consumer perceptions of sustainability in premium vs. regular cosmetics:",
+                  )}
                 </p>
 
                 <motion.div
@@ -387,7 +399,7 @@ function CustomAnalysisPanel() {
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
                   <h5 className="text-white/90 font-medium mb-1">
-                    Limited awareness of sustainability in premium cosmetics:
+                    {t("Limited awareness of sustainability in premium cosmetics:")}
                   </h5>
                   <ul className="list-disc pl-5 text-sm text-white/80 space-y-1">
                     <motion.li
@@ -395,14 +407,16 @@ function CustomAnalysisPanel() {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.3, duration: 0.5 }}
                     >
-                      Participants generally didn't perceive premium cosmetics as more sustainable than regular ones.
+                      {t(
+                        "Participants generally didn't perceive premium cosmetics as more sustainable than regular ones.",
+                      )}
                     </motion.li>
                     <motion.li
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.4, duration: 0.5 }}
                     >
-                      There was little mention of sustainability initiatives by premium brands.
+                      {t("There was little mention of sustainability initiatives by premium brands.")}
                     </motion.li>
                   </ul>
                 </motion.div>
@@ -413,23 +427,25 @@ function CustomAnalysisPanel() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.5 }}
                 >
-                  <h5 className="text-white/90 font-medium mb-1">Packaging expectations:</h5>
+                  <h5 className="text-white/90 font-medium mb-1">{t("Packaging expectations:")}</h5>
                   <ul className="list-disc pl-5 text-sm text-white/80 space-y-1">
                     <motion.li
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.6, duration: 0.5 }}
                     >
-                      Premium cosmetics were associated with more luxurious, often less sustainable packaging (e.g.,
-                      heavy glass containers).
+                      {t(
+                        "Premium cosmetics were associated with more luxurious, often less sustainable packaging (e.g., heavy glass containers).",
+                      )}
                     </motion.li>
                     <motion.li
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.7, duration: 0.5 }}
                     >
-                      Participants noted a slight trend towards reducing excess packaging in premium products, but
-                      didn't see it as a major focus.
+                      {t(
+                        "Participants noted a slight trend towards reducing excess packaging in premium products, but didn't see it as a major focus.",
+                      )}
                     </motion.li>
                   </ul>
                 </motion.div>
@@ -440,10 +456,11 @@ function CustomAnalysisPanel() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <h5 className="text-white/90 font-medium mb-2">Key Factors in Product Selection:</h5>
+                <h5 className="text-white/90 font-medium mb-2">{t("Key Factors in Product Selection:")}</h5>
                 <p className="text-sm text-white/80 mb-2">
-                  The following table summarizes the key factors that influence consumer decisions when choosing between
-                  premium and regular cosmetic products:
+                  {t(
+                    "The following table summarizes the key factors that influence consumer decisions when choosing between premium and regular cosmetic products:",
+                  )}
                 </p>
 
                 <div className="overflow-x-auto">
@@ -455,9 +472,9 @@ function CustomAnalysisPanel() {
                   >
                     <thead>
                       <tr className="border-b border-white/10">
-                        <th className="text-left py-2 text-white/70 font-medium">Factor</th>
-                        <th className="text-left py-2 text-white/70 font-medium">Importance</th>
-                        <th className="text-left py-2 text-white/70 font-medium">Consumer Preference</th>
+                        <th className="text-left py-2 text-white/70 font-medium">{t("Factor")}</th>
+                        <th className="text-left py-2 text-white/70 font-medium">{t("Importance")}</th>
+                        <th className="text-left py-2 text-white/70 font-medium">{t("Consumer Preference")}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -467,9 +484,9 @@ function CustomAnalysisPanel() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.0, duration: 0.5 }}
                       >
-                        <td className="py-2 text-white/80">Ingredients</td>
-                        <td className="py-2 text-white/80">High</td>
-                        <td className="py-2 text-white/80">Natural, vegan, no animal testing</td>
+                        <td className="py-2 text-white/80">{t("Ingredients")}</td>
+                        <td className="py-2 text-white/80">{t("High")}</td>
+                        <td className="py-2 text-white/80">{t("Natural, vegan, no animal testing")}</td>
                       </motion.tr>
                       <motion.tr
                         className="border-b border-white/5"
@@ -477,9 +494,9 @@ function CustomAnalysisPanel() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.1, duration: 0.5 }}
                       >
-                        <td className="py-2 text-white/80">Price-Performance</td>
-                        <td className="py-2 text-white/80">Medium</td>
-                        <td className="py-2 text-white/80">Value for money</td>
+                        <td className="py-2 text-white/80">{t("Price-Performance")}</td>
+                        <td className="py-2 text-white/80">{t("Medium")}</td>
+                        <td className="py-2 text-white/80">{t("Value for money")}</td>
                       </motion.tr>
                       <motion.tr
                         className="border-b border-white/5"
@@ -487,9 +504,9 @@ function CustomAnalysisPanel() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.2, duration: 0.5 }}
                       >
-                        <td className="py-2 text-white/80">Brand Reputation</td>
-                        <td className="py-2 text-white/80">Medium</td>
-                        <td className="py-2 text-white/80">Trusted brands preferred</td>
+                        <td className="py-2 text-white/80">{t("Brand Reputation")}</td>
+                        <td className="py-2 text-white/80">{t("Medium")}</td>
+                        <td className="py-2 text-white/80">{t("Trusted brands preferred")}</td>
                       </motion.tr>
                       <motion.tr
                         className="border-b border-white/5"
@@ -497,18 +514,18 @@ function CustomAnalysisPanel() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.3, duration: 0.5 }}
                       >
-                        <td className="py-2 text-white/80">Environmental Impact</td>
-                        <td className="py-2 text-white/80">Increasing</td>
-                        <td className="py-2 text-white/80">Sustainable products gaining popularity</td>
+                        <td className="py-2 text-white/80">{t("Environmental Impact")}</td>
+                        <td className="py-2 text-white/80">{t("Increasing")}</td>
+                        <td className="py-2 text-white/80">{t("Sustainable products gaining popularity")}</td>
                       </motion.tr>
                       <motion.tr
                         initial={{ opacity: 0, x: -5 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.4, duration: 0.5 }}
                       >
-                        <td className="py-2 text-white/80">Packaging</td>
-                        <td className="py-2 text-white/80">Low to Medium</td>
-                        <td className="py-2 text-white/80">Functional, attractive for premium products</td>
+                        <td className="py-2 text-white/80">{t("Packaging")}</td>
+                        <td className="py-2 text-white/80">{t("Low to Medium")}</td>
+                        <td className="py-2 text-white/80">{t("Functional, attractive for premium products")}</td>
                       </motion.tr>
                     </tbody>
                   </motion.table>
@@ -524,11 +541,12 @@ function CustomAnalysisPanel() {
                 <div className="p-3 bg-white/5 rounded-lg border border-white/10">
                   <div className="flex items-center gap-2 mb-2">
                     <Lightbulb className="h-4 w-4 text-amber-400" />
-                    <h5 className="text-white/90 font-medium">Key Insight</h5>
+                    <h5 className="text-white/90 font-medium">{t("Key Insight")}</h5>
                   </div>
                   <p className="text-sm text-white/80 italic">
-                    There's a significant opportunity for premium brands to differentiate by emphasizing sustainability,
-                    as consumers currently don't associate premium pricing with more sustainable practices.
+                    {t(
+                      "There's a significant opportunity for premium brands to differentiate by emphasizing sustainability, as consumers currently don't associate premium pricing with more sustainable practices.",
+                    )}
                   </p>
                 </div>
               </motion.div>
@@ -542,6 +560,8 @@ function CustomAnalysisPanel() {
 
 export default function SemanticMapLanding() {
   const [showContactForm, setShowContactForm] = useState(false)
+  const { t } = useLanguage()
+  const { language } = useLanguage()
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-black text-white overflow-hidden">
       {/* Background */}
@@ -560,10 +580,10 @@ export default function SemanticMapLanding() {
 
         <div className="hidden md:flex items-center space-x-8">
           <Link href="/use-cases" className="text-white/80 hover:text-white transition-colors">
-            Use Cases
+            {t("Use Cases")}
           </Link>
           <Link href="/pricing" className="text-white/80 hover:text-white transition-colors">
-            Pricing
+            {t("Pricing")}
           </Link>
           <Link
             href="/contact"
@@ -573,22 +593,20 @@ export default function SemanticMapLanding() {
               setShowContactForm(true)
             }}
           >
-            Contact
+            {t("Contact")}
           </Link>
-          <div className="ml-4 text-white/80 hover:text-white transition-colors">EN</div>
+          <LanguageSwitcher />
           <div className="flex items-center space-x-3">
-            {/* Wrap Sign Up button with Link */}
-            <Link href="https://app.semanticmap.com/signup" target="_blank" rel="noopener noreferrer">
+            <Link href="https://app.semanticmap.com/signup">
               <Button
                 variant="outline"
                 className="border-white/20 bg-transparent hover:bg-white/10 text-white rounded-full px-6"
               >
-                Sign Up
+                {t("Sign Up")}
               </Button>
             </Link>
-            {/* Wrap Login button with Link */}
-            <Link href="https://app.semanticmap.com/login" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Login</Button>
+            <Link href="https://app.semanticmap.com/login">
+              <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">{t("Login")}</Button>
             </Link>
           </div>
         </div>
@@ -603,7 +621,7 @@ export default function SemanticMapLanding() {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight"
           >
-            Discover what matters
+            {t("Discover what matters")}
           </motion.h1>
 
           <motion.p
@@ -612,7 +630,7 @@ export default function SemanticMapLanding() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto"
           >
-            Skip the manual review. Get immediate conversation insights that drive smarter, faster decisions.
+            {t("Skip the manual review. Get immediate conversation insights that drive smarter, faster decisions.")}
           </motion.p>
 
           <motion.div
@@ -621,21 +639,19 @@ export default function SemanticMapLanding() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex gap-4 justify-center"
           >
-            <Link href="https://app.semanticmap.com/login" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg font-medium"
-              >
-                Go To App
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg font-medium"
+            >
+              {t("Go To App")}
+            </Button>
             <Button
               size="lg"
               variant="outline"
               onClick={() => setShowContactForm(true)}
               className="border-white/20 bg-transparent hover:bg-white/10 text-white rounded-full px-8 py-6 text-lg font-medium"
             >
-              Request a Demo
+              {t("Request a Demo")} 
             </Button>
           </motion.div>
         </div>
@@ -658,14 +674,25 @@ export default function SemanticMapLanding() {
           >
             <div className="bg-black/80 backdrop-blur-sm rounded-lg overflow-hidden">
               <div className="aspect-video w-full">
-                <iframe
-                  src="https://player.vimeo.com/video/1020467364?autoplay=1&loop=1&muted=0&controls=1"
-                  className="w-full h-full"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title="SemanticMap Demo"
-                  style={{ border: "none" }}
-                ></iframe>
+                {language === "de" ? (
+                  <iframe
+                    src="https://player.vimeo.com/video/1020467364?h=3cf2305b6f&autoplay=1&loop=1&muted=0&controls=1&#t=23s"
+                    className="w-full h-full"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="SemanticMap Demo (German)"
+                    style={{ border: "none" }}
+                  ></iframe>
+                ) : (
+                  <iframe
+                    src="https://player.vimeo.com/video/1085953342?h=3cf2305b6f&autoplay=1&loop=1&muted=0&controls=1&start=0"
+                    className="w-full h-full"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="SemanticMap Demo"
+                    style={{ border: "none" }}
+                  ></iframe>
+                )}
               </div>
             </div>
           </div>
@@ -682,7 +709,7 @@ export default function SemanticMapLanding() {
             transition={{ duration: 0.8 }}
             className="text-3xl md:text-4xl font-bold text-center mb-24"
           >
-            Industry leading powerful AI-Driven features
+            {t("Industry leading powerful AI-Driven features")}
           </motion.h2>
 
           {/* Feature 1 - Automatic Transcription */}
@@ -698,8 +725,9 @@ export default function SemanticMapLanding() {
                 Perfect Transcription
               </h3>
               <p className="text-lg text-white/80">
-                Convert audio & video to text with very high accuracy in any language, saving time and ensuring precise
-                data capture.
+              {t(
+                  "Convert audio & video to text with very high accuracy in any language, saving time and ensuring precise data capture.",
+                )}
               </p>
             </div>
             <div className="w-full md:w-1/2">
@@ -718,7 +746,10 @@ export default function SemanticMapLanding() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1 }}
                       >
-                        <TypewriterEffect text="Mehr müssen wir gar nicht machen. Magst du was trinken?" />
+                        {language === "de"
+                        ? "Worauf achtest du normalerweise bei der Verpackung von Luxuskosmetik?" 
+                        : "What do you usually look for in luxury cosmetics packaging?"}
+              
                       </motion.p>
                     </div>
                   </div>
@@ -736,7 +767,10 @@ export default function SemanticMapLanding() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1 }}
                       >
-                        <TypewriterEffect text="Ja, gerne. Vielleicht ein Wasser?" delay={1} />
+                        {language === "de"
+                        ? "Ehrlich gesagt sollte es gut in meinem Regal aussehen, aber wenn es schwer zu öffnen oder unordentlich ist, kaufe ich es nicht wieder."
+                        : "Honestly, it should look nice on my shelf, but if it's hard to open or messy, I won't buy it again."}
+                        
                       </motion.p>
                     </div>
                   </div>
@@ -754,7 +788,10 @@ export default function SemanticMapLanding() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 2 }}
                       >
-                        <TypewriterEffect text="Wir haben auch Saft oder Kaffee, wenn du möchtest." delay={2} />
+                        {language === "de"
+                        ? "Würdest du also sagen, dass Funktionalität wichtiger ist als Ästhetik, wenn du einen Kauf tätigst?"
+                        : "So would you say functionality outweighs aesthetics when you're making a purchase?"}
+                        
                       </motion.p>
                     </div>
                   </div>
@@ -773,8 +810,9 @@ export default function SemanticMapLanding() {
             <div className="text-center mb-8">
               <h4 className="text-xl font-medium text-white mb-2">Experience Real-Time Transcription</h4>
               <p className="text-white/70">
-                Press play to hear the audio and watch as our AI transcribes it with perfect accuracy, even with a
-                challenging audio
+              {t(
+                  "Press play to hear the audio and watch as our AI transcribes it with perfect accuracy, even with a challenging audio",
+                )}
               </p>
             </div>
             <AudioTranscriptPlayer
@@ -793,11 +831,12 @@ export default function SemanticMapLanding() {
           >
             <div className="w-full md:w-1/2 text-left">
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-                Speaker Identification
+                {t("Speaker Identification")}
               </h3>
               <p className="text-lg text-white/80">
-                Accurately distinguish between different speakers in conversations for targeted insights, even in big
-                focus groups.
+                {t(
+                  "Accurately distinguish between different speakers in conversations for targeted insights, even in big focus groups.",
+                )}
               </p>
             </div>
             <div className="w-full md:w-1/2">
@@ -808,31 +847,36 @@ export default function SemanticMapLanding() {
                     <div className="flex flex-col items-start gap-5">
                       <div className="flex items-center gap-4 w-full">
                         <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-300 to-green-100 flex items-center justify-center flex-shrink-0 shadow-md">
-                          <span className="text-green-800 text-lg">👩</span>
+                          <span className="text-green-800 text-lg">{t("👩")}</span>
                         </div>
                         <div>
-                          <div className="font-medium text-xl text-white">Sarah</div>
-                          <div className="text-white/60">Marketing Manager</div>
+                          <div className="font-medium text-xl text-white">{t("Sarah")}</div>
+                          <div className="text-white/60">{t("Marketing Manager")}</div>
                         </div>
                       </div>
 
                       <div className="w-full space-y-3">
                         <div className="text-xs text-green-400 flex items-center">
                           <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                          Focus Group: Cosmetic Products and Sustainability
+                          {t("Focus Group: Cosmetic Products and Sustainability")}
                         </div>
 
                         <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">Age: 35</span>
-                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">Female</span>
                           <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">
-                            Married, 1 kid
+                            {t("Age: 35")}
+                          </span>
+                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">
+                            {t("Female")}
+                          </span>
+                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">
+                            {t("Married, 1 kid")}
                           </span>
                         </div>
 
                         <div className="text-sm text-white/80 mt-2 border-l-2 border-green-400 pl-3">
-                          Values high-quality packaging for premium products and observes trends in the cosmetics
-                          industry.
+                          {t(
+                            "Values high-quality packaging for premium products and observes trends in the cosmetics industry.",
+                          )}
                         </div>
                       </div>
                     </div>
@@ -843,29 +887,34 @@ export default function SemanticMapLanding() {
                     <div className="flex flex-col items-start gap-5">
                       <div className="flex items-center gap-4 w-full">
                         <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-300 to-blue-100 flex items-center justify-center flex-shrink-0 shadow-md">
-                          <span className="text-blue-800 text-lg">👨</span>
+                          <span className="text-blue-800 text-lg">{t("👨")}</span>
                         </div>
                         <div>
-                          <div className="font-medium text-xl text-white">Thomas</div>
-                          <div className="text-white/60">Environmental Engineer</div>
+                          <div className="font-medium text-xl text-white">{t("Thomas")}</div>
+                          <div className="text-white/60">{t("Environmental Engineer")}</div>
                         </div>
                       </div>
 
                       <div className="w-full space-y-3">
                         <div className="text-xs text-green-400 flex items-center">
                           <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                          Focus Group: Cosmetic Products and Sustainability
+                          {t("Focus Group: Cosmetic Products and Sustainability")}
                         </div>
 
                         <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">Age: 28</span>
-                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">Male</span>
-                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">Single</span>
+                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">
+                            {t("Age: 28")}
+                          </span>
+                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">{t("Male")}</span>
+                          <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white/80">
+                            {t("Single")}
+                          </span>
                         </div>
 
                         <div className="text-sm text-white/80 mt-2 border-l-2 border-blue-400 pl-3">
-                          Emphasizes the importance of sustainability and environmentally friendly packaging in the
-                          cosmetics industry.
+                          {t(
+                            "Emphasizes the importance of sustainability and environmentally friendly packaging in the cosmetics industry.",
+                          )}
                         </div>
                       </div>
                     </div>
@@ -885,70 +934,73 @@ export default function SemanticMapLanding() {
           >
             <div className="w-full md:w-1/2 text-left">
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-                In-depth Analysis
+                {t("In-depth Analysis")}
               </h3>
               <p className="text-lg text-white/80">
-                Dive deep into specific topics with comprehensive analysis and structured insights from your research
-                data.
+                {t(
+                  "Dive deep into specific topics with comprehensive analysis and structured insights from your research data.",
+                )}
               </p>
             </div>
             <div className="w-full md:w-1/2">
               <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                 <div className="flex">
                   <div className="w-1/3 border-r border-white/10 pr-3">
-                    <div className="font-medium text-white/90 mb-4">Deep Analysis</div>
+                    <div className="font-medium text-white/90 mb-4">{t("Deep Analysis")}</div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer">
-                        <span className="text-white/80">Product Selection</span>
+                        <span className="text-white/80">{t("Product Selection")}</span>
                         <ChevronRight className="h-4 w-4 text-white/50" />
                       </div>
                       <div className="flex items-center justify-between p-2 bg-white/10 rounded">
-                        <span className="text-white/90 font-medium">Packaging and Functionality</span>
+                        <span className="text-white/90 font-medium">{t("Packaging and Functionality")}</span>
                         <ChevronRight className="h-4 w-4 text-white/70" />
                       </div>
                       <div className="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer">
-                        <span className="text-white/80">Sustainability</span>
+                        <span className="text-white/80">{t("Sustainability")}</span>
                         <ChevronRight className="h-4 w-4 text-white/50" />
                       </div>
                     </div>
                   </div>
                   <div className="w-2/3 pl-4">
-                    <div className="font-medium text-white/90 mb-3">Packaging and Functionality</div>
+                    <div className="font-medium text-white/90 mb-3">{t("Packaging and Functionality")}</div>
                     <p className="text-sm text-white/80 mb-4">
-                      For luxury cosmetics, there's a balance between aesthetics and functionality in packaging. While
-                      high-quality packaging is expected for expensive products, functionality often takes precedence.
+                      {t(
+                        "For luxury cosmetics, there's a balance between aesthetics and functionality in packaging. While high-quality packaging is expected for expensive products, functionality often takes precedence.",
+                      )}
                     </p>
 
-                    <div className="font-medium text-white/90 mb-2">Packaging Preferences</div>
+                    <div className="font-medium text-white/90 mb-2">{t("Packaging Preferences")}</div>
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm">
                         <thead>
                           <tr className="border-b border-white/10">
-                            <th className="text-left py-2 text-white/70 font-medium">Aspect</th>
-                            <th className="text-left py-2 text-white/70 font-medium">Importance</th>
+                            <th className="text-left py-2 text-white/70 font-medium">{t("Aspect")}</th>
+                            <th className="text-left py-2 text-white/70 font-medium">{t("Importance")}</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr className="border-b border-white/5">
-                            <td className="py-2 text-white/80">Functionality</td>
-                            <td className="py-2 text-white/80">High</td>
+                            <td className="py-2 text-white/80">{t("Functionality")}</td>
+                            <td className="py-2 text-white/80">{t("High")}</td>
                           </tr>
                           <tr className="border-b border-white/5">
-                            <td className="py-2 text-white/80">Aesthetics</td>
-                            <td className="py-2 text-white/80">Medium</td>
+                            <td className="py-2 text-white/80">{t("Aesthetics")}</td>
+                            <td className="py-2 text-white/80">{t("Medium")}</td>
                           </tr>
                           <tr className="border-b border-white/5">
-                            <td className="py-2 text-white/80">Material</td>
-                            <td className="py-2 text-white/80">Increasing</td>
+                            <td className="py-2 text-white/80">{t("Material")}</td>
+                            <td className="py-2 text-white/80">{t("Increasing")}</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
 
                     <div className="mt-4 p-3 bg-white/5 rounded border-l-2 border-green-400 italic text-sm text-white/80">
-                      "Bei einem hochwertigen Produkt, ist mir die Verpackung sehr wichtig. Wenn ich ein teures Produkt
-                      kaufe, will ich auch eine schöne und hochwertige Verpackung."
-                      <div className="text-right text-green-400 text-xs mt-1">T6</div>
+                      {t(
+                        '"With a high-quality product, the packaging is very important to me. If I’m buying something expensive, I also want beautiful and premium packaging."',
+                      )}
+                      <div className="text-right text-green-400 text-xs mt-1">{t("T6")}</div>
                     </div>
                   </div>
                 </div>
@@ -966,11 +1018,12 @@ export default function SemanticMapLanding() {
           >
             <div className="w-full md:w-1/2 text-left">
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-                Concept Analysis
+                {t("Concept Analysis")}
               </h3>
               <p className="text-lg text-white/80">
-                Easier compare participant perspectives on key concepts across demographics to identify patterns and
-                preferences.
+                {t(
+                  "Easier compare participant perspectives on key concepts across demographics to identify patterns and preferences.",
+                )}
               </p>
             </div>
             <div className="w-full md:w-1/2">
@@ -978,53 +1031,53 @@ export default function SemanticMapLanding() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-red-200/30 rounded"></div>
-                    <span className="text-sm text-white/80">Negative Opinion</span>
+                    <span className="text-sm text-white/80">{t("Negative Opinion")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-white/10 rounded"></div>
-                    <span className="text-sm text-white/80">Positive Opinion</span>
+                    <span className="text-sm text-white/80">{t("Positive Opinion")}</span>
                   </div>
                 </div>
 
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-white/10">
-                      <th className="text-left py-3 text-white/90 font-medium">Concept</th>
+                      <th className="text-left py-3 text-white/90 font-medium">{t("Concept")}</th>
                       <th className="text-left py-3 text-white/90 font-medium">
-                        <div>Sarah</div>
-                        <div className="text-xs text-white/60">35, Female</div>
+                        <div>{t("Sarah")}</div>
+                        <div className="text-xs text-white/60">{t("35, Female")}</div>
                       </th>
                       <th className="text-left py-3 text-white/90 font-medium">
-                        <div>Thomas</div>
-                        <div className="text-xs text-white/60">28, Male</div>
+                        <div>{t("Thomas")}</div>
+                        <div className="text-xs text-white/60">{t("28, Male")}</div>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-white/5">
-                      <td className="py-3 text-white/80 font-medium">Ingredients</td>
-                      <td className="py-3 text-white/80">No animal testing</td>
-                      <td className="py-3 text-white/80 pl-4">Product dependent</td>
+                      <td className="py-3 text-white/80 font-medium">{t("Ingredients")}</td>
+                      <td className="py-3 text-white/80">{t("No animal testing")}</td>
+                      <td className="py-3 text-white/80 pl-4">{t("Product dependent")}</td>
                     </tr>
                     <tr className="border-b border-white/5">
-                      <td className="py-3 text-white/80 font-medium">Packaging</td>
-                      <td className="py-3 text-white/80">High-quality for expensive products</td>
-                      <td className="py-3 text-white/80 pl-4">Less plastic is better</td>
+                      <td className="py-3 text-white/80 font-medium">{t("Packaging")}</td>
+                      <td className="py-3 text-white/80">{t("High-quality for expensive products")}</td>
+                      <td className="py-3 text-white/80 pl-4">{t("Less plastic is better")}</td>
                     </tr>
                     <tr className="border-b border-white/5">
-                      <td className="py-3 text-white/80 font-medium">Sustainability</td>
-                      <td className="py-3 text-white/80">Trend towards more sustainability</td>
-                      <td className="py-3 text-white/80 pl-4">Good for conscience</td>
+                      <td className="py-3 text-white/80 font-medium">{t("Sustainability")}</td>
+                      <td className="py-3 text-white/80">{t("Trend towards more sustainability")}</td>
+                      <td className="py-3 text-white/80 pl-4">{t("Good for conscience")}</td>
                     </tr>
                     <tr className="border-b border-white/5">
-                      <td className="py-3 text-white/80 font-medium">Price-Performance</td>
-                      <td className="py-3 text-white/80">Willing to pay more for quality</td>
-                      <td className="py-3 text-white/80 bg-white/5 pl-4">Important purchase criterion</td>
+                      <td className="py-3 text-white/80 font-medium">{t("Price-Performance")}</td>
+                      <td className="py-3 text-white/80">{t("Willing to pay more for quality")}</td>
+                      <td className="py-3 text-white/80 bg-white/5 pl-4">{t("Important purchase criterion")}</td>
                     </tr>
                     <tr>
-                      <td className="py-3 text-white/80 font-medium">Effectiveness</td>
-                      <td className="py-3 text-white/80">Expected in premium products</td>
-                      <td className="py-3 text-white/80 pl-4">Depends on product type</td>
+                      <td className="py-3 text-white/80 font-medium">{t("Effectiveness")}</td>
+                      <td className="py-3 text-white/80">{t("Expected in premium products")}</td>
+                      <td className="py-3 text-white/80 pl-4">{t("Depends on product type")}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1042,11 +1095,12 @@ export default function SemanticMapLanding() {
           >
             <div className="w-full md:w-1/2 text-left">
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-                Multi-Interview Analysis
+              {t("Multi-Interview Analysis")}
               </h3>
               <p className="text-lg text-white/80">
-                Analyze multiple interviews simultaneously to identify broader patterns and insights across different
-                sessions and participant groups.
+              {t(
+                  "Analyze multiple interviews simultaneously to identify broader patterns and insights across different sessions and participant groups.",
+                )}
               </p>
             </div>
             <div className="w-full md:w-1/2">
@@ -1115,9 +1169,9 @@ export default function SemanticMapLanding() {
                       }}
                       className="absolute inset-0 rounded-full"
                     />
-                    <div className="text-white font-medium text-lg">Unified</div>
-                    <div className="text-white font-medium text-lg">Analysis</div>
-                    <div className="text-white/60 text-sm mt-1">22 participants</div>
+                    <div className="text-white font-medium text-lg">{t("Unified")}</div>
+                    <div className="text-white font-medium text-lg">{t("Analysis")}</div>
+                    <div className="text-white/60 text-sm mt-1">{t("22 participants")}</div>
                   </motion.div>
 
                   {/* Orbital paths */}
@@ -1207,8 +1261,8 @@ export default function SemanticMapLanding() {
                     <div className="text-blue-400 mb-2">
                       <FileText className="h-6 w-6" />
                     </div>
-                    <div className="text-sm text-white/90 text-center font-medium">Focus Group 1</div>
-                    <div className="text-xs text-white/60">5 participants</div>
+                    <div className="text-sm text-white/90 text-center font-medium">{t("Focus Group 1")}</div>
+                    <div className="text-xs text-white/60">{t("5 participants")}</div>
                   </motion.div>
 
                   <motion.div
@@ -1220,8 +1274,8 @@ export default function SemanticMapLanding() {
                     <div className="text-purple-400 mb-2">
                       <FileText className="h-6 w-6" />
                     </div>
-                    <div className="text-sm text-white/90 text-center font-medium">Focus Group 2</div>
-                    <div className="text-xs text-white/60">6 participants</div>
+                    <div className="text-sm text-white/90 text-center font-medium">{t("Focus Group 2")}</div>
+                    <div className="text-xs text-white/60">{t("6 participants")}</div>
                   </motion.div>
 
                   <motion.div
@@ -1233,8 +1287,8 @@ export default function SemanticMapLanding() {
                     <div className="text-green-400 mb-2">
                       <FileText className="h-6 w-6" />
                     </div>
-                    <div className="text-sm text-white/90 text-center font-medium">Expert Interviews</div>
-                    <div className="text-xs text-white/60">3 participants</div>
+                    <div className="text-sm text-white/90 text-center font-medium">{t("Expert Interviews")}</div>
+                    <div className="text-xs text-white/60">{t("3 participants")}</div>
                   </motion.div>
 
                   <motion.div
@@ -1246,8 +1300,8 @@ export default function SemanticMapLanding() {
                     <div className="text-amber-400 mb-2">
                       <FileText className="h-6 w-6" />
                     </div>
-                    <div className="text-sm text-white/90 text-center font-medium">User Testing</div>
-                    <div className="text-xs text-white/60">8 participants</div>
+                    <div className="text-sm text-white/90 text-center font-medium">{t("User Testing")}</div>
+                    <div className="text-xs text-white/60">{t("8 participants")}</div>
                   </motion.div>
                 </div>
               </div>
@@ -1264,11 +1318,12 @@ export default function SemanticMapLanding() {
           >
             <div className="w-full md:w-1/2 text-left">
               <h3 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-                Custom Analysis
+                {t("Custom Analysis")}
               </h3>
               <p className="text-lg text-white/80">
-                Define your own research questions and get the most accurate AI-powered insights tailored to your
-                specific needs and interests.
+                {t(
+                  "Define your own research questions and get the most accurate AI-powered insights tailored to your specific needs and interests.",
+                )}
               </p>
             </div>
             <div className="w-full md:w-1/2">
@@ -1332,7 +1387,7 @@ export default function SemanticMapLanding() {
                 className="inline-block mb-6 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 text-sm backdrop-blur-sm"
               >
                 <span className="inline-block w-2 h-2 rounded-full bg-green-400 mr-2"></span>
-                Start your journey today
+                {t("Start your journey today")}
               </motion.div>
 
               <motion.h2
@@ -1342,7 +1397,7 @@ export default function SemanticMapLanding() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70"
               >
-                Ready to Transform Your Research?
+                {t("Ready to Transform Your Research?")}
               </motion.h2>
 
               <motion.p
@@ -1352,7 +1407,7 @@ export default function SemanticMapLanding() {
                 viewport={{ once: true }}
                 className="text-xl text-white/80 mb-12 max-w-2xl mx-auto"
               >
-                Join the AI revolution and unlock unprecedented insights that drive smarter, faster decisions.
+                {t("Join the AI revolution and unlock unprecedented insights that drive smarter, faster decisions.")}
               </motion.p>
 
               <motion.div
@@ -1376,7 +1431,7 @@ export default function SemanticMapLanding() {
                               group-hover:-translate-y-0.5 border border-white/10
                               hover:shadow-md"
                   >
-                    <span className="opacity-90 group-hover:opacity-100 transition-opacity">Request a Demo</span>
+                    <span className="opacity-90 group-hover:opacity-100 transition-opacity">{t("Request a Demo")}</span>
                     <span
                       className="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 
                                 transition-all duration-300"
@@ -1417,7 +1472,7 @@ export default function SemanticMapLanding() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {/* Contact Us */}
               <div>
-                <h3 className="text-white text-xl font-medium mb-6">Contact Us</h3>
+                <h3 className="text-white text-xl font-medium mb-6">{t("Contact Us")}</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Phone className="w-5 h-5 text-white/60 mr-3" />
@@ -1444,16 +1499,16 @@ export default function SemanticMapLanding() {
 
               {/* Quick Links */}
               <div>
-                <h3 className="text-white text-xl font-medium mb-6">Quick Links</h3>
+                <h3 className="text-white text-xl font-medium mb-6">{t("Quick Links")}</h3>
                 <div className="space-y-3">
                   <div>
                     <Link href="/use-cases" className="text-white/80 hover:text-white transition-colors">
-                      Use Cases
+                      {t("Use Cases")}
                     </Link>
                   </div>
                   <div>
                     <Link href="/pricing" className="text-white/80 hover:text-white transition-colors">
-                      Pricing
+                      {t("Pricing")}
                     </Link>
                   </div>
                 </div>
@@ -1461,21 +1516,21 @@ export default function SemanticMapLanding() {
 
               {/* Legal */}
               <div>
-                <h3 className="text-white text-xl font-medium mb-6">Legal</h3>
+                <h3 className="text-white text-xl font-medium mb-6">{t("Legal")}</h3>
                 <div className="space-y-3">
                   <div>
                     <Link href="/data_privacy" className="text-white/80 hover:text-white transition-colors">
-                      Data Privacy Policy
+                      {t("Data Privacy Policy")}
                     </Link>
                   </div>
                   <div>
                     <Link href="/terms" className="text-white/80 hover:text-white transition-colors">
-                      Terms of Service
+                      {t("Terms of Service")}
                     </Link>
                   </div>
                   <div>
                     <Link href="/imprint" className="text-white/80 hover:text-white transition-colors">
-                      Imprint
+                      {t("Imprint")}
                     </Link>
                   </div>
                 </div>
@@ -1495,3 +1550,4 @@ export default function SemanticMapLanding() {
     </div>
   )
 }
+

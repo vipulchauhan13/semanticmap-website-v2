@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { GeistSans } from 'geist/font/sans'
-import { I18nProvider } from "@/components/i18n-provider"
+import { LanguageProvider } from "@/contexts/language-context"
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -15,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={GeistSans.variable}>
-      <body>
-        <I18nProvider>
+    <html lang="en">
+      <body className={GeistSans.className}>
+        <LanguageProvider>
           {children}
-        </I18nProvider>
+        </LanguageProvider>
       </body>
     </html>
   )
