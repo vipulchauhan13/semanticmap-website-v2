@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/chauhv/Library/CloudStorage/OneDrive-Henkel/personal_sync/next/Dev Env Portal/git_repo/semanticmap-website-v2/app/layout":["static/media/028c0d39d2e8f589-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/chauhv/Library/CloudStorage/OneDrive-Henkel/personal_sync/next/Dev Env Portal/git_repo/semanticmap-website-v2/app/layout\":[\"static/media/028c0d39d2e8f589-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
